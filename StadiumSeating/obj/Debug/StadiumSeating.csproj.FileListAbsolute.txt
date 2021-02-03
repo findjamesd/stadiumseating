@@ -1,0 +1,15 @@
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\bin\Debug\StadiumSeating.exe.config
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\bin\Debug\StadiumSeating.exe
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\bin\Debug\StadiumSeating.pdb
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\obj\Debug\StadiumSeating.csprojAssemblyReference.cache
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\obj\Debug\MainWindow.g.cs
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\obj\Debug\App.g.cs
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\obj\Debug\StadiumSeating_MarkupCompile.cache
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\obj\Debug\StadiumSeating_MarkupCompile.lref
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\obj\Debug\MainWindow.baml
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\obj\Debug\StadiumSeating.g.resources
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\obj\Debug\StadiumSeating.Properties.Resources.resources
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\obj\Debug\StadiumSeating.csproj.GenerateResource.cache
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\obj\Debug\StadiumSeating.csproj.CoreCompileInputs.cache
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\obj\Debug\StadiumSeating.exe
+C:\Users\james\OneDrive\Documents\SCHOOL WORK\PROG8010 - SOFTWARE DEVELOPMENT\CODE\Assignments\StadiumSeating\StadiumSeating\obj\Debug\StadiumSeating.pdb

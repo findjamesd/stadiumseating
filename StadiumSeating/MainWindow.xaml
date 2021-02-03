@@ -1,0 +1,232 @@
+﻿<!-- James Odeyale - Group 1 -->
+
+<Window x:Class="StadiumSeating.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StadiumSeating"
+        mc:Ignorable="d"
+        Title="Stadium Seating"  
+        Height="450" 
+        Width="1000"
+        MinWidth="800"
+        Background="#F3F5F7"
+        FontFamily="Verdana"
+     >
+
+    <Window.Resources>
+        <Style TargetType="Label" x:Key="DivisionBorder">
+            <Setter Property="BorderBrush" Value="#C8E0F9" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Grid.Column" Value="1" />
+            <Setter Property="Grid.ColumnSpan" Value="2" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="ClassLabel">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="#EDF5FD" />
+            <Setter Property="Grid.Column" Value="0" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="RowHeading">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="#004d73" />
+            <Setter Property="Grid.Row" Value="0" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="errorLabel">
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="10 0" />
+            <Setter Property="Foreground" Value="#D10000" />
+            <Setter Property="Grid.Column" Value="1" />
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="textBox">
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="Height" Value="45" />
+            <Setter Property="Width" Value="200" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Padding" Value="10 0" />
+            <Setter Property="Foreground" Value="#004d73" />
+            <Setter Property="Grid.Column" Value="1" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="totalAmountText">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Foreground" Value="#004d73" />
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--Table layering-->
+        <Label 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Grid.RowSpan="5" 
+            Background="#004d73"
+               >
+        </Label>
+
+        <Label 
+            Grid.Row="0" 
+            Grid.Column="1" 
+            Grid.RowSpan="5" 
+            >
+        </Label>
+
+        <Label 
+            Grid.Row="1" 
+            Style="{StaticResource DivisionBorder}"
+               >
+        </Label>
+
+        <Label 
+            Grid.Row="2" 
+            Style="{StaticResource DivisionBorder}"
+               >
+        </Label>
+
+        <Label 
+            Grid.Row="3" 
+            Style="{StaticResource DivisionBorder}"
+               >
+        </Label>
+
+        <!-- Column for class labels and total generated -->
+
+        <Label Content="Class A"
+               Grid.Row="1"    
+               Style="{StaticResource ClassLabel}"
+         />
+
+        <Label Content="Class B"
+               Grid.Row="2"
+               Style="{StaticResource ClassLabel}"
+         />
+
+        <Label Content="Class C"
+               Grid.Row="3"
+               Style="{StaticResource ClassLabel}"
+         />
+
+        <Label Content="Total Revenue Generated"
+               Grid.Row="4"
+               Style="{StaticResource ClassLabel}"
+         />
+
+        <!--top section of display table-->
+
+        <Label Content="Number of sold ticket"
+               Grid.Column="1"
+               Style="{StaticResource RowHeading}"
+         />
+
+        <Label Content="Amount of income generated"
+               Grid.Column="2"
+               Style="{StaticResource RowHeading}"    
+         />
+
+        <!--section for input fields -->
+        <TextBox Grid.Row="1" 
+                 Name="txtTicketForClassA"
+                 TextChanged="CalcOnTextChange"
+                 Style="{StaticResource textBox}"   
+         >
+        </TextBox>
+
+        <Label Grid.Row="1"
+               Name="errorMessageForClassA"
+               Style="{StaticResource errorLabel}"  
+         />
+
+        <TextBox Grid.Row="2" 
+                 Name="txtTicketForClassB"
+                 TextChanged="CalcOnTextChange"
+                 Style="{StaticResource textBox}"   
+                 >
+        </TextBox>
+
+        <Label Grid.Row="2"
+               Name="errorMessageForClassB"
+               Style="{StaticResource errorLabel}"  
+         />
+
+        <TextBox Grid.Row="3"
+                 Name="txtTicketForClassC"
+                 TextChanged="CalcOnTextChange"
+                 Style="{StaticResource textBox}"   
+                 >
+        </TextBox>
+
+        <Label Grid.Row="3"
+               Name="errorMessageForClassC"
+               Style="{StaticResource errorLabel}"  
+         />
+
+        <!--section for label total tickets-->
+        <Label Content="0"
+               Grid.Column="1"
+               Grid.Row="4"
+               Name="tbTotalTicketsSold"
+               Style="{StaticResource totalAmountText}"  
+               FontSize="22"
+               FontWeight="Bold"
+         />
+
+        <!-- section for label for classes total amount-->
+        <Label Content="$0.00"
+               Grid.Column="2"
+               Grid.Row="1"
+               Name="tbTotalTicketsClassA"
+               Style="{StaticResource totalAmountText}"  
+         />
+
+        <Label Content="$0.00"
+               Grid.Column="2"
+               Grid.Row="2"
+               Name="tbTotalTicketsClassB"    
+               Style="{StaticResource totalAmountText}"  
+         />
+
+        <Label Content="$0.00"
+               Grid.Column="2"
+               Grid.Row="3"
+               Name="tbTotalTicketsClassC"
+               Style="{StaticResource totalAmountText}"  
+         />
+
+        <Label Content="$0.00"
+               Grid.Column="2"
+               Grid.Row="4"
+               Name="tbTotalRevenueGenerated"
+               Style="{StaticResource totalAmountText}"  
+               FontSize="22"
+         />
+
+    </Grid>
+</Window>
