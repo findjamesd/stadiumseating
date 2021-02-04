@@ -1,4 +1,4 @@
-﻿// James Odeyale - Group 1
+// James Odeyale - Group 1
 using System.Windows;
 
 namespace StadiumSeating
@@ -9,16 +9,37 @@ namespace StadiumSeating
     public partial class MainWindow : Window
     {
         int classATotal = 0, classBTotal = 0, classCTotal = 0;
+        
         int classATickets = 0, classBTickets = 0, classCTickets = 0;
+        
         public MainWindow()
         {
             InitializeComponent();
-            tbTotalTicketsClassA.Content = "$" + classATotal.ToString("n2");
-            tbTotalTicketsClassB.Content = "$" + classBTotal.ToString("n2");
-            tbTotalTicketsClassC.Content = "$" + classCTotal.ToString("n2");
-            tbTotalRevenueGenerated.Content = "$" + 0.ToString("n2");
+            
+            tbTotalTicketsClassA.Content = classATotal.ToString("C");
+            
+            tbTotalTicketsClassB.Content = classBTotal.ToString("C");
+            
+            tbTotalTicketsClassC.Content = classCTotal.ToString("C");
+            
+            tbTotalRevenueGenerated.Content = 0.ToString("C");
         }
 
+        static int EmptyStringChecker(string currentValue)
+        {
+            return currentValue == "" ? 0 : int.Parse(currentValue);
+        }
+
+        private void CalcTotalIncomeGenerated()
+        {
+            int totalTicketsSold = classATickets + classBTickets + classCTickets;
+
+            int totalIncomeGenerated = classATotal + classBTotal + classCTotal;
+
+            tbTotalTicketsSold.Content = totalTicketsSold.ToString();
+
+            tbTotalRevenueGenerated.Content = totalIncomeGenerated.ToString("C");
+        }
 
         private void CalcOnTextChange(object sender, RoutedEventArgs e)
         {
@@ -26,85 +47,51 @@ namespace StadiumSeating
             {
                 if (sender.Equals(txtTicketForClassA))
                 {
-                    if (txtTicketForClassA.Text.Length > 0)
-                    {
-                        classATotal = int.Parse(txtTicketForClassA.Text) * 15;
 
-                        classATickets = int.Parse(txtTicketForClassA.Text);
+                    int userInput = EmptyStringChecker(txtTicketForClassA.Text);
 
-                        tbTotalTicketsClassA.Content = "$" + classATotal.ToString("n2");
+                    classATotal = userInput * 15;
 
-                        errorMessageForClassA.Content = "";
+                    classATickets = userInput;
 
-                        CalcTotalIncomeGenerated();
+                    tbTotalTicketsClassA.Content = classATotal.ToString("C");
 
-                    }
-                    else
-                    {
-                        classATotal = 0;
+                    errorMessageForClassA.Content = "";
 
-                        classATickets = 0;
+                    CalcTotalIncomeGenerated();
 
-                        tbTotalTicketsClassA.Content = "$" + classATotal.ToString("n2");
-
-                        errorMessageForClassA.Content = "";
-
-                        CalcTotalIncomeGenerated();
-                    }
                 }
                 else if (sender.Equals(txtTicketForClassB))
                 {
-                    if (txtTicketForClassB.Text.Length > 0)
-                    {
-                        classBTotal = int.Parse(txtTicketForClassB.Text) * 12;
 
-                        classBTickets = int.Parse(txtTicketForClassB.Text);
+                    int userInput = EmptyStringChecker(txtTicketForClassB.Text);
 
-                        tbTotalTicketsClassB.Content = "$" + classBTotal.ToString("n2");
+                    classBTotal = userInput * 12;
 
-                        errorMessageForClassB.Content = "";
+                    classBTickets = userInput;
 
-                        CalcTotalIncomeGenerated();
-                    }
-                    else
-                    {
-                        classBTotal = 0;
+                    tbTotalTicketsClassB.Content = classBTotal.ToString("C");
 
-                        classBTickets = 0;
+                    errorMessageForClassB.Content = "";
 
-                        tbTotalTicketsClassB.Content = "$" + classBTotal.ToString("n2");
+                    CalcTotalIncomeGenerated();
 
-                        errorMessageForClassB.Content = "";
-
-                        CalcTotalIncomeGenerated();
-                    }
                 }
                 else
                 {
-                    if (txtTicketForClassC.Text.Length > 0)
-                    {
-                        classCTotal = int.Parse(txtTicketForClassC.Text) * 9;
 
-                        classCTickets = int.Parse(txtTicketForClassC.Text);
+                    int userInput = EmptyStringChecker(txtTicketForClassC.Text);
 
-                        tbTotalTicketsClassC.Content = "$" + classCTotal.ToString("n2");
+                    classCTotal = userInput * 9;
 
-                        errorMessageForClassC.Content = "";
+                    classCTickets = userInput;
 
-                        CalcTotalIncomeGenerated();
-                    }
-                    else
-                    {
-                        classCTotal = 0;
+                    tbTotalTicketsClassC.Content = classCTotal.ToString("C");
 
-                        classCTickets = 0;
+                    errorMessageForClassC.Content = "";
 
-                        tbTotalTicketsClassC.Content = "$" + classCTotal.ToString("n2");
+                    CalcTotalIncomeGenerated();
 
-                        errorMessageForClassC.Content = "";
-
-                        CalcTotalIncomeGenerated();
-                    }
                 }
             }
             catch
@@ -117,7 +104,7 @@ namespace StadiumSeating
 
                     classATickets = 0;
 
-                    tbTotalTicketsClassA.Content = "$" + classATotal.ToString("n2");
+                    tbTotalTicketsClassA.Content = classATotal.ToString("C");
 
                     CalcTotalIncomeGenerated();
 
@@ -130,7 +117,7 @@ namespace StadiumSeating
 
                     classBTickets = 0;
 
-                    tbTotalTicketsClassB.Content = "$" + classBTotal.ToString("n2");
+                    tbTotalTicketsClassB.Content = classBTotal.ToString("C");
 
                     CalcTotalIncomeGenerated();
                 }
@@ -142,35 +129,11 @@ namespace StadiumSeating
 
                     classCTickets = 0;
 
-                    tbTotalTicketsClassC.Content = "$" + classCTotal.ToString("n2");
+                    tbTotalTicketsClassC.Content = classCTotal.ToString("C");
 
                     CalcTotalIncomeGenerated();
                 }
             }
         }
-
-        private void CalcTotalIncomeGenerated()
-        {
-            int totalTicketsSold = classATickets + classBTickets + classCTickets;
-
-            int totalIncomeGenerated = classATotal + classBTotal + classCTotal;
-
-            tbTotalTicketsSold.Content = totalTicketsSold.ToString();
-
-            tbTotalRevenueGenerated.Content = "$" + totalIncomeGenerated.ToString("n2");
-        }
-
-
-        // I commented this out because the function was complicating the app so maybe if anyone else can help make it make sense...lol please feel free to break the app down further
-
-        /* private void DisplayCalculation(string classType, int cost, int classTotal, int classTotalTickets, object classTotalText, object classErrorMessage)
-         {
-
-             classTotalText = "$" + classTotal.ToString("n2");
-
-             classErrorMessage = "";
-
-             CalcTotalIncomeGenerated();
-         }*/
     }
 }
